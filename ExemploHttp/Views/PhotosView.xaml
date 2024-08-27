@@ -5,19 +5,29 @@
              Title="PhotosView">
     <VerticalStackLayout>
         <ScrollView>
-            <CollectionView ItemsSource="{Binding Posts}">
+            <CollectionView ItemsSource="{Binding Photos}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
 
                         <VerticalStackLayout>
-                            <Image
-                                Source="{Binding Title}"
-                                
+                            <Label
+                         Text="{Binding Title}"
+                         FontSize="25"
+                         HorizontalTextAlignment="Center"
+                         TextColor="#025"
+                     />
+                            <Image Source="{Binding ThumbnailUrl}" />
+                            <Image Source="{Binding Url}" />
+
                         </VerticalStackLayout>
 
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+
         </ScrollView>
+        <Button Command="{Binding getPhotosCommand}"
+            Text="Carregar Photos"
+            WidthRequest="200"/>
     </VerticalStackLayout>
 </ContentPage>
